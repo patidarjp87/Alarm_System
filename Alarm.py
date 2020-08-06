@@ -11,11 +11,16 @@ def musiconloop(file,stopper):
             break
 while True:
     d=datetime.now()
-    if d.hour<13:
+    if d.hour<12:
         if d.minute==0 and d.second==0:
-               musiconloop('water.mp3','stop')
                print('Time is',d.hour,"AM\nType'stop' to break alarm")
+               musiconloop('water.mp3','stop')
+    elif d.hour==12:
+        if d.minute==0 and d.second==0:
+               print('Time is',d.hour,"PM\nType'stop' to break alarm")
+               musiconloop('water.mp3','stop')
     else:
         if d.minute==0 and d.second==0:
-               musiconloop('water.mp3','stop')
                print("Time is",d.hour-12,"PM\nType'stop' to break alarm")
+               musiconloop('water.mp3','stop')
+               
